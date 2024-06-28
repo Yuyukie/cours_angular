@@ -1,5 +1,6 @@
+import { MonsterType } from './../../utils/monster.utils';
 import { Monster } from './../../models/monster.model';
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-playing-card',
@@ -9,5 +10,7 @@ import { Component, input, InputSignal } from '@angular/core';
   styleUrl: './playing-card.component.css',
 })
 export class PlayingCardComponent {
-  monster: InputSignal<Monster> = input(new Monster());
+  @Input() monster = new Monster();
+  MonsterTypeIcon: string = 'assets/pika.jpg';
+  backgroundColor: string = 'rgb(255,255,104)';
 }
